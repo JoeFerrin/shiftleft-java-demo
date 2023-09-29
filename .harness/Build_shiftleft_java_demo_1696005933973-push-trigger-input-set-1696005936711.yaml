@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shiftleft_java_demo_1696005933973-push-trigger-input-set
+  identifier: Build_shiftleft_java_demo_1696005933973pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: TEST
+  pipeline:
+    identifier: Build_shiftleft_java_demo_1696005933973
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
