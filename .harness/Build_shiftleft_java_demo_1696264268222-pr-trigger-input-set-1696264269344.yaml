@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shiftleft_java_demo_1696264268222-pr-trigger-input-set
+  identifier: Build_shiftleft_java_demo_1696264268222prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: HARQwietjava
+  pipeline:
+    identifier: Build_shiftleft_java_demo_1696264268222
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
