@@ -27,7 +27,7 @@ pipeline:
                     shell: Sh
                     command: sl analyze --app HAR-Qwiet-java
                     envVariables:
-                      SHIFTLEFT_ACCESS_TOKEN: <+secrets.getValue("SHIFTLEFT_ACCESS_TOKEN")>
+                      SHIFTLEFT_ACCESS_TOKEN: <+secrets.getValue("Qwiet_Token")>
                   description: Using Qwiet AI's preZero platform
           platform:
             arch: Amd64
