@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shiftleft_java_demo_1696269431280-push-trigger-input-set
+  identifier: Build_shiftleft_java_demo_1696269431280pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: HARQwietjava
+  pipeline:
+    identifier: Build_shiftleft_java_demo_1696269431280
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
