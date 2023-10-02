@@ -1,6 +1,6 @@
 pipeline:
   identifier: Build_shiftleft_java_demo_1696269431280
-  name: Build shiftleft-java-demo
+  name: Build and Test
   orgIdentifier: default
   projectIdentifier: HARQwietjava
   properties:
@@ -18,16 +18,21 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    command: echo hello world
-                  timeout: ""
                   type: Run
+                  name: SL Analyze
+                  identifier: SL_Analyze
+                  spec:
+                    connectorRef: DOCQwietjava
+                    image: shiftleft/core:latest
+                    shell: Sh
+                    command: sl analyze --app HAR-Qwiet-java
+                    envVariables:
+                      SHIFTLEFT_ACCESS_TOKEN: <+secrets.getValue("Qwiet_Token")>
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
+  tags: {}
