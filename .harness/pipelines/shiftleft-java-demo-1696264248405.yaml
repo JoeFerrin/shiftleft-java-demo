@@ -18,12 +18,17 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: echo
-                  name: echo
-                  spec:
-                    command: echo hello world
-                  timeout: ""
                   type: Run
+                  name: Qwiet Analysis
+                  identifier: Qwiet_Analysis
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: shiftleft/core:latest
+                    shell: Sh
+                    command: sl analyze --app HAR-Qwiet-java
+                    envVariables:
+                      SHIFTLEFT_ACCESS_TOKEN: <+secrets.getValue("SHIFTLEFT_ACCESS_TOKEN")>
+                  description: Using Qwiet AI's preZero platform
           platform:
             arch: Amd64
             os: Linux
